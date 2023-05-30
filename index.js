@@ -1,5 +1,5 @@
 const express = requre('express');
-const cors = require('cors');   // CORS = Cross Origin Resource Sharing
+const cors = require('cors');
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const app = express();
 const port = process.env.PORT || 5000;
