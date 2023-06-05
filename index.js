@@ -25,8 +25,14 @@ async function run() {
     // Connect the client to the server	(optional starting in v4.7)
     await client.connect();
 
+    const database = client.db('usersDB');
+    const usersCollection = database.collection('users');
+
     app.post('/users', async (req, res) => {
       const user = req.body;
+      const result = await usersCollection.insertOne(user);
+      console.log('data added successfully');
+      res.send(result);
 
     })
 
